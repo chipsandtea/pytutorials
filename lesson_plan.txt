@@ -1,0 +1,64 @@
+SE Web Data with Python lesson plan
+v1.0 - August 4th, 2016
+Christopher Hsiao
+
+Three Major Goals: 
+	1.) Command Line
+	2.) Introductory Python (basic computer science literacy)
+	3.) Understanding the Data (interacting w/ JSON & XML)
+	4.) Making API Calls
+
+1.) COMMAND LINE
+	- http://blog.teamtreehouse.com/introduction-to-the-mac-os-x-command-line
+		- Basic navigational commands: pwd, cd, ls, man <command>
+		- mkdir, touch, cp, mv , rm, less (maybe)
+2.) INTRODUCTORY PYTHON (CS Literacy)
+	- Installing Python3 (brew,pip,pip3)
+	- Basic Data Structures -> ints, floats, strings
+	- Arithmetic Operators
+		- + , - , * , / , // , % operations
+	- "Hello World!"
+		- learn to initialize and store strings (and variables)
+		- learn print()
+	- Constructing Strings
+		- String Split and Join
+		- Concatenation
+	- Raw Input
+		- Read in from Keyboard and print to screen
+	- Conditional Statements
+		- if, elif, else
+	- Loops
+		- while loops
+		- for loops
+	- More Advanced Data Structures
+		- Arrays (Lists)
+			- (maybe) 2DArrays
+		- Dictionaries (key,value)
+		- Tuples
+	- Accessing Data Structures
+		- Looping over Arrays
+		- Accessing data in Dictionaries
+		- Coordinates in tuples
+	- Using Libraries
+		- Installing external Libraries
+		- Importing libraries
+3.) Accessing Web Data with Python
+	- (maybe) Regular Expressions
+	- XML
+		- Understanding the data
+		- PrettyPrinter
+		- Parsing XML
+			- ElementTree
+			- Extracting Data
+	- JSON
+		- Understanding the data
+		- PrettyPrinter
+		- Parsing JSON
+			- Extracting Data
+	- Rest API Calls
+		- Service Oriented Approach
+		- Using public API's without Access Tokens
+			- URL Construction
+		- Using API's with Access Tokens
+			- URL Construction
+		- Practice making API calls and extracting info from returned data
