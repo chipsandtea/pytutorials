@@ -1,4 +1,0 @@
-[ListApp | ERROR] Unwritable directory, please contact your instructor: /srv/nbgrader/exchange
-[FetchApp | INFO] Source: /srv/nbgrader/exchange/demo/outbound/ps1
-[FetchApp | INFO] Destination: /Users/chsiao/Tutorials/notebooks/CommandLine/ps1
-[FetchApp | INFO] Fetched as: demo ps1
