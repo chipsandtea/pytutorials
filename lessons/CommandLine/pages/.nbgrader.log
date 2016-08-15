@@ -1,0 +1,15 @@
+Installing create_assignment extension
+Making directory: /usr/local/share/jupyter/nbextensions/create_assignment/
+Copying: /usr/local/lib/python3.5/site-packages/nbgrader/nbextensions/static/create_assignment/create_assignment.css -> /usr/local/share/jupyter/nbextensions/create_assignment/create_assignment.css
+Copying: /usr/local/lib/python3.5/site-packages/nbgrader/nbextensions/static/create_assignment/main.js -> /usr/local/share/jupyter/nbextensions/create_assignment/main.js
+Installing assignment_list extension
+Making directory: /usr/local/share/jupyter/nbextensions/assignment_list/
+Copying: /usr/local/lib/python3.5/site-packages/nbgrader/nbextensions/static/assignment_list/assignment_list.css -> /usr/local/share/jupyter/nbextensions/assignment_list/assignment_list.css
+Copying: /usr/local/lib/python3.5/site-packages/nbgrader/nbextensions/static/assignment_list/assignment_list.js -> /usr/local/share/jupyter/nbextensions/assignment_list/assignment_list.js
+Copying: /usr/local/lib/python3.5/site-packages/nbgrader/nbextensions/static/assignment_list/main.js -> /usr/local/share/jupyter/nbextensions/assignment_list/main.js
+Enabling notebook extension create_assignment/main...
+      - Validating: [32mOK[0m
+Activating assignment_list server extension
+Enabling tree extension assignment_list/main...
+      - Validating: [32mOK[0m
+Done. You may need to restart the Jupyter notebook server for changes to take effect.
