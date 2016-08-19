@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>setup</title>
+<title>index</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -11751,48 +11751,38 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Setup-Python">Setup Python<a class="anchor-link" href="#Setup-Python">&#182;</a></h2><p>A very important tool is a package manager. <strong>Package managers</strong> make it very easy to simply install any packages or modules you may want or need to augment your workflow, or enable some program. There are two primary package managers that are used: Homebrew (for OSX), and <code>pip/pip3</code> (for python modules and libraries). Alternatively, there is also a guide by Allen Downey (the author to the free textbook used as a curriculum guide for this tutorial series) for python installation and other goodies found <a href="http://www.allendowney.com/wp/books/think-python-2e/">here</a>.</p>
-<h3 id="Installing-Homebrew">Installing Homebrew<a class="anchor-link" href="#Installing-Homebrew">&#182;</a></h3><p><a href="brew.sh">Homebrew</a> can be installed by entering the following line (from their website) into your terminal.</p>
-
-<pre><code>/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-
-</code></pre>
-<p>It may prompt you to continue with the installation several times. Just follow any onscreen instructions and let it do its thing</p>
-<hr>
-<p>Have Homebrew installed? Great! Let's start by installing some packages.</p>
-<p>Package installations can be initiated via the following syntax:</p>
-
-<pre><code>brew install [package ...]
-
-</code></pre>
-<p>Some packages to install are:</p>
-<ul>
-<li><code>wget</code> - for simple highspeed file transfer</li>
-<li><code>git</code> - version control system. <strong>Extremely</strong> powerful and useful</li>
-<li><code>cask</code> - Install software through homebrew (such as Spotify!) via <code>brew cask install [package name]</code></li>
-<li><code>trash</code> - Delete files by moving them to your trash, instead of them vanishing (like when using rm)</li>
-<li><code>python3</code> - The language we'll be using in all tutorials. Macs typically come with Python 2.7.* installed by default, so we just need to grab python3. This will also install <code>pip3</code>. To install <code>pip</code> (assuming your computer already has Python 2.7~ installed by default, go <a href="https://pip.readthedocs.io/en/stable/installing/">here</a>.</li>
-</ul>
-<div class="alert alert-success">Give these commands a try! You should be able to make calls just by typing in these command names into terminal. (Try making a file using <code>touch</code> and deleting it with <code>trash</code>. You should see the file in your trash!</div><p>If you are given commands that don't work because the terminal says some packages aren't recognized, it probably means that you simply don't have it installed. <code>brew install [package name]</code> is the solution to that problem!</p>
-<div class="alert alert-info">There are tons of brew packages you can install, including software packages that can be installed via <code>brew cask install [package name]</code>. Feel free to google lists of recommended brew packages and install them to your hearts content! Just make sure they're actually useful.</div><hr>
-<h3 id="Using-pip/pip3">Using pip/pip3<a class="anchor-link" href="#Using-pip/pip3">&#182;</a></h3><p>pip and pip3 are the package managers for <strong>python modules and libraries</strong>. Modules and libraries are code bases that implement something that we, as the developers, need to complete our task. However, we don't want to reinvent the wheel, as the saying goes, and would rather use someone elses (probably better) implementation. You'll commonly see libraries being used in scripts and code bases in general.</p>
-<p><strong>pip</strong> is the package manager for Python2, and packages, libraries, or modules written in Python2 should be installed via this utility. The syntax is:</p>
-
-<pre><code>pip install [package ...]
-
-</code></pre>
-<p><strong>pip</strong> is the package manager for Python3, and packages, libraries, or modules written in Python3 should be installed via this utility. The syntax is:</p>
-
-<pre><code>pip3 install [package ...]
-
-</code></pre>
-<div class="alert alert-info">Debugging Tip: If you ever find yourself facing a "Module not found: some_module" error after attempting to execute a script, try installing it via pip/pip3! Chances are it will install the packages you're missing and the script will work as intended.</div><hr>
-<p>I won't be recommending Python2/3 packages here. Instead, I recommend learning to search up packages as you may need them (when a certain task seems so general that <strong>someone</strong> must have written a library for it), and working off those. As you work with more and more scripts, you'll build up a package base based on your wants and needs. This being said, however, there are many precompiled lists of very handy pip/pip3 packages that you're likely to encounter sooner or later. One of which can be found <a href="https://pythontips.com/2013/07/30/20-python-libraries-you-cant-live-without/">here</a>. Feel free to google for more curated lists.</p>
-<hr>
-<p><a class="btn btn-success" href="../index.html" role="button">Return to Main</a></p>
+<h1 id="Thinking-in-Python">Thinking in Python<a class="anchor-link" href="#Thinking-in-Python">&#182;</a></h1><p><strong>By: Christopher Hsiao</strong></p>
+<p>This tutorial series will introduce you thinking with computer science as a base, while using Python as the medium we exercise these ideas in. To be sure, this is by no means an exhaustive tutorial. Instead, my goal with this tutorial is to provide a solid foundation for programming practices and concepts, enough to the extent where you can easily interact with scripts and apis.</p>
+<p>More specifically, this tutorial utilizes Python3 and all newer versions. Python2 is what may be already installed on your computer.</p>
+<h2 id="Table-of-Contents">Table of Contents<a class="anchor-link" href="#Table-of-Contents">&#182;</a></h2><p><a href="pages/setup.html">Setup - Package Managers (Homebrew and pip/pip3)</a></p>
+<ol>
+<li><a href="pages/ch1/ch1.html">What is a Program? How do they work?</a></li>
+<li><a href="pages/ch2/ch2.html">Variables, Expresions, and Statements</a></li>
+<li>Functions</li>
+<li>Conditionals</li>
+<li>Strings</li>
+<li>Lists</li>
+<li>Dictionaries</li>
+<li>Tuples</li>
+<li>Files</li>
+</ol>
+<h3 id="Acknowledgements">Acknowledgements<a class="anchor-link" href="#Acknowledgements">&#182;</a></h3><p>Huge thanks to Allen B. Downey and his freely provided textbooks found at <a href="greenteapress.com/wp">greenteapress</a>.</p>
 
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+</div>
+</div>
+</div>
+
 </div>
     </div>
   </div>

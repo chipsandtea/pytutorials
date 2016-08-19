@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>setup</title>
+<title>ch1</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -11751,45 +11751,208 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Setup-Python">Setup Python<a class="anchor-link" href="#Setup-Python">&#182;</a></h2><p>A very important tool is a package manager. <strong>Package managers</strong> make it very easy to simply install any packages or modules you may want or need to augment your workflow, or enable some program. There are two primary package managers that are used: Homebrew (for OSX), and <code>pip/pip3</code> (for python modules and libraries). Alternatively, there is also a guide by Allen Downey (the author to the free textbook used as a curriculum guide for this tutorial series) for python installation and other goodies found <a href="http://www.allendowney.com/wp/books/think-python-2e/">here</a>.</p>
-<h3 id="Installing-Homebrew">Installing Homebrew<a class="anchor-link" href="#Installing-Homebrew">&#182;</a></h3><p><a href="brew.sh">Homebrew</a> can be installed by entering the following line (from their website) into your terminal.</p>
-
-<pre><code>/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-
-</code></pre>
-<p>It may prompt you to continue with the installation several times. Just follow any onscreen instructions and let it do its thing</p>
+<h1 id="Chapter-1:-What-are-programs,-and-how-do-they-work?">Chapter 1: What are programs, and how do they work?<a class="anchor-link" href="#Chapter-1:-What-are-programs,-and-how-do-they-work?">&#182;</a></h1><p><strong>Christopher Hsiao - v1.0</strong></p>
+<h2 id="Introduction">Introduction<a class="anchor-link" href="#Introduction">&#182;</a></h2><p>The goal of this tutorial is for you to learn how to think like a computer scientist. Programming really is a means to an end, and a way for us to apply our problem solving skills. First, we'll learn about what exactly a program is, their components, and how everything comes together.</p>
+<p><br/></p>
+<div class="alert alert-info">To do this, we'll be using the programming language Python. If you don't have it yet (and the associated package managers), please check out the guide found <a href="../setup.html">here</a>.</div><hr>
+<h2 id="1.1-What-is-a-program?">1.1 What is a program?<a class="anchor-link" href="#1.1-What-is-a-program?">&#182;</a></h2><p>Programs are a series of instructions, that explicitely defines the behavior of a machine by executing commands and computations. There are tons of different instructions you can give a machine to execute, but (for the most part) all languages have some very important types of instructions.</p>
+<p><strong>input: </strong> Gets information from forms of input, such as files, keyboards, the network, or any other sort of input device.</p>
+<p><strong>output: </strong> Returns data to the user by displaying it on the screen, saving it in a file/device, sending it back over a network, etc.</p>
+<p><strong>math: </strong> Basic mathematical operations. More complicated math (such as Calculus, Linear Algebra, Statistics, etc.) can be found elsewhere.</p>
+<p><strong>conditionals: </strong> Checking for "conditions", and running specific code as a result of these conditions.</p>
+<p><strong>loops/repetition: </strong> Repeating an action, generally with some variation.</p>
+<p>Programs can basically be deconstructed into a combination of these types of commands linking together other general instructions. It is helpful to think of programming as the process of breaking problems into smaller and smaller subtasks.</p>
 <hr>
-<p>Have Homebrew installed? Great! Let's start by installing some packages.</p>
-<p>Package installations can be initiated via the following syntax:</p>
 
-<pre><code>brew install [package ...]
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="1.2-Running-Python">1.2 Running Python<a class="anchor-link" href="#1.2-Running-Python">&#182;</a></h2><p>To Python on its own, you can run the Python <strong>interpreter</strong>. What this does is read in Python code, and executes it on the fly. You can execute it by typing <code>python</code> for Python2, or <code>python3</code> for Python3. We'll be using Python3 for this tutorial. When you execute the command, you should see some output similar to this:</p>
 
-</code></pre>
-<p>Some packages to install are:</p>
-<ul>
-<li><code>wget</code> - for simple highspeed file transfer</li>
-<li><code>git</code> - version control system. <strong>Extremely</strong> powerful and useful</li>
-<li><code>cask</code> - Install software through homebrew (such as Spotify!) via <code>brew cask install [package name]</code></li>
-<li><code>trash</code> - Delete files by moving them to your trash, instead of them vanishing (like when using rm)</li>
-<li><code>python3</code> - The language we'll be using in all tutorials. Macs typically come with Python 2.7.* installed by default, so we just need to grab python3. This will also install <code>pip3</code>. To install <code>pip</code> (assuming your computer already has Python 2.7~ installed by default, go <a href="https://pip.readthedocs.io/en/stable/installing/">here</a>.</li>
-</ul>
-<div class="alert alert-success">Give these commands a try! You should be able to make calls just by typing in these command names into terminal. (Try making a file using <code>touch</code> and deleting it with <code>trash</code>. You should see the file in your trash!</div><p>If you are given commands that don't work because the terminal says some packages aren't recognized, it probably means that you simply don't have it installed. <code>brew install [package name]</code> is the solution to that problem!</p>
-<div class="alert alert-info">There are tons of brew packages you can install, including software packages that can be installed via <code>brew cask install [package name]</code>. Feel free to google lists of recommended brew packages and install them to your hearts content! Just make sure they're actually useful.</div><hr>
-<h3 id="Using-pip/pip3">Using pip/pip3<a class="anchor-link" href="#Using-pip/pip3">&#182;</a></h3><p>pip and pip3 are the package managers for <strong>python modules and libraries</strong>. Modules and libraries are code bases that implement something that we, as the developers, need to complete our task. However, we don't want to reinvent the wheel, as the saying goes, and would rather use someone elses (probably better) implementation. You'll commonly see libraries being used in scripts and code bases in general.</p>
-<p><strong>pip</strong> is the package manager for Python2, and packages, libraries, or modules written in Python2 should be installed via this utility. The syntax is:</p>
-
-<pre><code>pip install [package ...]
+<pre><code>Python 3.5.2 (default, Jul 28 2016, 21:28:00)
+[GCC 4.2.1 Compatible Apple LLVM 7.3.0 (clang-703.0.31)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+&gt;&gt;&gt;
 
 </code></pre>
-<p><strong>pip</strong> is the package manager for Python3, and packages, libraries, or modules written in Python3 should be installed via this utility. The syntax is:</p>
+<p>There may be some differences with regards to certain details on the second line, but what is important is what's on the first line. Make sure that you're running the correct Python version for your needs, in this case: Python 3.</p>
+<p>On the fourth line, we see <code>&gt;&gt;&gt;</code>, which is what's known as the <strong>prompt</strong>. The prompt is the interpreters way to indicate that it is ready for you to enter code - until you see it, expect it to be unresponsive to whatever you do. As a note, if you're ever running code and want to abort an operation, enter <code>Ctrl c</code>, which will interrupt the operations and exit out of the last call made.</p>
+<p>Let's start playing around with Python, shall we? We can write some code here and press Enter.</p>
 
-<pre><code>pip3 install [package ...]
+<pre><code>&gt;&gt;&gt; 5 + 5
+10
 
 </code></pre>
-<div class="alert alert-info">Debugging Tip: If you ever find yourself facing a "Module not found: some_module" error after attempting to execute a script, try installing it via pip/pip3! Chances are it will install the packages you're missing and the script will work as intended.</div><hr>
-<p>I won't be recommending Python2/3 packages here. Instead, I recommend learning to search up packages as you may need them (when a certain task seems so general that <strong>someone</strong> must have written a library for it), and working off those. As you work with more and more scripts, you'll build up a package base based on your wants and needs. This being said, however, there are many precompiled lists of very handy pip/pip3 packages that you're likely to encounter sooner or later. One of which can be found <a href="https://pythontips.com/2013/07/30/20-python-libraries-you-cant-live-without/">here</a>. Feel free to google for more curated lists.</p>
+<div class="alert alert-success">If everything leading up to this point has worked, that's great! You're ready to continue. If not, verify that you didn't miss any steps from the <a herf="../setup.html">setup</a>.</div><hr>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="1.3-Your-First-Program:-Hello-OpenDNS!">1.3 Your First Program: Hello OpenDNS!<a class="anchor-link" href="#1.3-Your-First-Program:-Hello-OpenDNS!">&#182;</a></h2><p>Traditionally speaking, the first program tutorials will have you write is one that prints <code>"Hello, World!"</code> to the screen. Let's try a slightly modified version. In order to print to the screen, we'll use the <code>print()</code> function. The syntax for this command looks like this:</p>
+
+<pre><code>print('Some String of Text')
+
+</code></pre>
+<p>Let's give it a try!</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello, OpenDNS!&#39;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Hello, OpenDNS!!
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="alert alert-success">Great, it works! Congratulations, you've just run your first program in Python!</div><p>For <code>Python2</code> users, the print statement is slightly different. <code>print</code> isn't actually a function in <code>Python2</code>, and as such doesn't require parentheses. Those calls look like this:</p>
+
+<pre><code>&gt;&gt;&gt; print 'Hello, OpenDNS!'
+Hello, OpenDNS!
+</code></pre>
 <hr>
-<p><a class="btn btn-success" href="../index.html" role="button">Return to Main</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="1.4-Arithmetic-Operations">1.4 Arithmetic Operations<a class="anchor-link" href="#1.4-Arithmetic-Operations">&#182;</a></h2><p>You've already gotten a taste of how to add back in <em>1.2</em>. We'll be building on that by going over some of the mathematical <strong>operators</strong> built into <code>Python</code>. Operators are unique symbols that represent some computation.</p>
+<p><strong>Addition</strong></p>
+
+<pre><code>&gt;&gt;&gt; 10 + 15
+25
+
+</code></pre>
+<p><strong>Subtraction</strong></p>
+
+<pre><code>&gt;&gt;&gt; 7 - 3
+4
+
+</code></pre>
+<p><strong>Multiplication</strong></p>
+
+<pre><code>&gt;&gt;&gt; 4 * 5
+20
+
+</code></pre>
+<p>Division gets a little different. There are two operators for doing division, and each returns a slightly different value: <code>/</code> and <code>//</code>.</p>
+<p>Generally speaking, one is safe to assume that the general division operator is the <code>/</code>. Let's use it first just to see what we get from it.</p>
+
+<pre><code>&gt;&gt;&gt; 23/3
+7.666666666666667
+
+</code></pre>
+<p>Note that it has a decimal. It's important to note that this means it's <strong>not</strong> an integer, but instead what's known as a <strong>float</strong>, the <code>type</code> of decimal numbers.</p>
+<p>Let's use the second operator now.</p>
+
+<pre><code>&gt;&gt;&gt; 23//3
+7
+
+</code></pre>
+<p>As we can see, the decimal disappeared. Using the <code>//</code> operator forces the output to be an integer. However, note that it does not round the value down to 7, it simply <strong>truncates</strong> the decimal values, which is to say it chops them off. There are ways to round using the <code>round()</code> function.</p>
+<hr>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="1.5-Values-and-Types">1.5 Values and Types<a class="anchor-link" href="#1.5-Values-and-Types">&#182;</a></h2><p>We have already seen several values and types of data through this tutorial! Let's talk about these values quickly, and understand what it means to be a <code>type</code> of something.</p>
+<p>Values belong to types. Types allow <code>Python</code> to know what to do with data it is given, and determine what kind of behavior the data should have. Some values we've seen are:</p>
+
+<pre><code>20, 7.66666..., 'Hello, OpenDNS!
+
+</code></pre>
+<p><code>20</code> is an integer (<code>int</code>), <code>7.6666...</code> is a float, and <code>'Hello, OpenDNS!'</code> is a string (<code>str</code>). If you're ever unsure about the type of a language, <code>Python</code> has a built in <code>type()</code> function that returns the type of an object. Let's try verifying these value types through the interpreter!</p>
+
+<pre><code>&gt;&gt;&gt; type(20)
+&lt;class 'int'&gt;
+&gt;&gt;&gt; type(7.66666)
+&lt;class 'float'&gt;
+&gt;&gt;&gt; type('Hello, OpenDNS!')
+&lt;class 'str'&gt;
+
+</code></pre>
+<p>The word <code>class</code> found in these outputs represents a category. You can think of a <code>type</code> as a category of values.</p>
+<p>Notice that <code>'Hello, OpenDNS!'</code> has quotes around them. Why do we need these? What happens if we put quotes around <code>20</code> and <code>7.66666</code>? What type would they be?</p>
+
+<pre><code>&gt;&gt;&gt; type('20')
+&lt;class 'str'&gt;
+&gt;&gt;&gt; type('7.66666')
+&lt;class 'str'&gt;
+
+</code></pre>
+<p>They're strings! This means we've converted these values to strings. Another way to convert values to strings is using the builtin <code>str()</code> function. You can convert these values back to <code>integers</code> and <code>floats</code> using <code>ints()</code> and <code>float()</code> as well.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="1.6-Exercises">1.6 Exercises<a class="anchor-link" href="#1.6-Exercises">&#182;</a></h2><p>It's important in programming to understand the behavior of your tools both when they work, and when they don't. Knowing when and why something may break is just as important as knowing when and why something will work smoothly. These are some simple exercises to demonstrate what I mean.</p>
+<ol>
+<li>In a print statement, what happens if you leave out one of the parentheses, or both?</li>
+<li>If you are trying to print a string, what happens if you leave out one of the quotation marks,
+or both?</li>
+<li>You can use a minus sign to make a negative number like -2. What happens if you put a plus sign before a number? What about 2++2?</li>
+<li>In math notation, leading zeros are ok, as in 02. What happens if you try this in Python?</li>
+<li>What happens if you have two values with no operator between them?</li>
+</ol>
+<p><strong>Exercise 1.2:</strong> Start the Python interpreter and use it as a calculator.</p>
+<ol>
+<li>How many seconds are there in 42 minutes 42 seconds?</li>
+<li>How many miles are there in 10 kilometers? Hint: there are 1.61 kilometers in a mile.</li>
+<li>If you run a 10 kilometer race in 42 minutes 42 seconds, what is your average pace (time per
+mile in minutes and seconds)? What is your average speed in miles per hour?</li>
+</ol>
+<p><sup>These exercises are from page 7 of Think Python 2e, by Allen Downey).</sup></p>
+<hr>
+<p><a class="btn btn-success" href="../../index.html" role="button">Return to Main</a>  <a class="btn btn-success" href="../ch2/ch2.html" role="button">Chapter 2</a></p>
 
 </div>
 </div>
