@@ -4,7 +4,7 @@
 
 <head><meta charset="utf-8" />
 
-<title>ch1</title>
+<title>ch2_pg1</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
@@ -23474,95 +23474,59 @@ div#notebook {
 
 <div class="text_cell_render border-box-sizing rendered_html">
 
-<h1 id="Chapter-1:-What-are-programs,-and-how-do-they-work?">Chapter 1: What are programs, and how do they work?<a class="anchor-link" href="#Chapter-1:-What-are-programs,-and-how-do-they-work?">&#182;</a></h1><p><strong>Christopher Hsiao - v1.0</strong></p>
-
-<h2 id="Introduction">Introduction<a class="anchor-link" href="#Introduction">&#182;</a></h2><p>The goal of this tutorial is for you to learn how to think like a computer scientist. Programming really is a means to an end, and a way for us to apply our problem solving skills. First, we'll learn about what exactly a program is, their components, and how everything comes together.</p>
-
-<p><br/></p>
-
-<div class="alert alert-info">To do this, we'll be using the programming language Python. If you don't have it yet (and the associated package managers), please check out the guide found <a href="../setup.html">here</a>.</div><hr>
-
-<h2 id="1.1-What-is-a-program?">1.1 What is a program?<a class="anchor-link" href="#1.1-What-is-a-program?">&#182;</a></h2><p>Programs are a series of instructions, that explicitely defines the behavior of a machine by executing commands and computations. There are tons of different instructions you can give a machine to execute, but (for the most part) all languages have some very important types of instructions.</p>
-
-<p><strong>input: </strong> Gets information from forms of input, such as files, keyboards, the network, or any other sort of input device.</p>
-
-<p><strong>output: </strong> Returns data to the user by displaying it on the screen, saving it in a file/device, sending it back over a network, etc.</p>
-
-<p><strong>math: </strong> Basic mathematical operations. More complicated math (such as Calculus, Linear Algebra, Statistics, etc.) can be found elsewhere.</p>
-
-<p><strong>conditionals: </strong> Checking for "conditions", and running specific code as a result of these conditions.</p>
-
-<p><strong>loops/repetition: </strong> Repeating an action, generally with some variation.</p>
-
-<p>Programs can basically be deconstructed into a combination of these types of commands linking together other general instructions. It is helpful to think of programming as the process of breaking problems into smaller and smaller subtasks.</p>
+<h1 id="Chapter-2:-Variables,-Expressions,-and-Statements">Chapter 2: Variables, Expressions, and Statements<a class="anchor-link" href="#Chapter-2:-Variables,-Expressions,-and-Statements">&#182;</a></h1><p><strong>Christopher Hsiao - v1.0</strong></p>
 
 <hr>
 
-</div>
+<p><strong>variables</strong> are the tools used to store, manipulate, and return data. Using a variables name refers to its value.</p>
 
-</div>
+<h2 id="2.1-Assignment">2.1 Assignment<a class="anchor-link" href="#2.1-Assignment">&#182;</a></h2><p><strong>Assignment</strong> creates a new variable and <em>assigns</em> it a value. Assignment is done using the <code>=</code> operator.</p>
 
-</div>
+<p>Let's try assigning some values.</p>
 
-<div class="cell border-box-sizing text_cell rendered">
+<pre><code>&gt;&gt;&gt; message = 'Hello, OpenDNS!'
 
-<div class="prompt input_prompt">
+Hello, OpenDNS!
 
-</div>
+&gt;&gt;&gt; num = 17
 
-<div class="inner_cell">
-
-<div class="text_cell_render border-box-sizing rendered_html">
-
-<h2 id="1.2-Running-Python">1.2 Running Python<a class="anchor-link" href="#1.2-Running-Python">&#182;</a></h2><p>To Python on its own, you can run the Python <strong>interpreter</strong>. What this does is read in Python code, and executes it on the fly. You can execute it by typing <code>python</code> for Python2, or <code>python3</code> for Python3. We'll be using Python3 for this tutorial. When you execute the command, you should see some output similar to this:</p>
-
-<pre><code>Python 3.5.2 (default, Jul 28 2016, 21:28:00)
-
-[GCC 4.2.1 Compatible Apple LLVM 7.3.0 (clang-703.0.31)] on darwin
-
-Type "help", "copyright", "credits" or "license" for more information.
-
-&gt;&gt;&gt;
+17
 
 </code></pre>
 
-<p>There may be some differences with regards to certain details on the second line, but what is important is what's on the first line. Make sure that you're running the correct Python version for your needs, in this case: Python 3.</p>
+<p>This allows us to store values for later use. Now, instead of printing the string <code>'Hello, OpenDNS'</code>, we can print the variable <code>message</code>, and it will give us its value.</p>
 
-<p>On the fourth line, we see <code>&gt;&gt;&gt;</code>, which is what's known as the <strong>prompt</strong>. The prompt is the interpreters way to indicate that it is ready for you to enter code - until you see it, expect it to be unresponsive to whatever you do. As a note, if you're ever running code and want to abort an operation, enter <code>Ctrl c</code>, which will interrupt the operations and exit out of the last call made.</p>
+<pre><code>&gt;&gt;&gt; print(message)
 
-<p>Let's start playing around with Python, shall we? We can write some code here and press Enter.</p>
+Hello, OpenDNS!
 
-<pre><code>&gt;&gt;&gt; 5 + 5
+&gt;&gt;&gt; print(num)
 
-10
-
-</code></pre>
-
-<div class="alert alert-success">If everything leading up to this point has worked, that's great! You're ready to continue. If not, verify that you didn't miss any steps from the <a herf="../setup.html">setup</a>.</div><hr>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="cell border-box-sizing text_cell rendered">
-
-<div class="prompt input_prompt">
-
-</div>
-
-<div class="inner_cell">
-
-<div class="text_cell_render border-box-sizing rendered_html">
-
-<h2 id="1.3-Your-First-Program:-Hello-OpenDNS!">1.3 Your First Program: Hello OpenDNS!<a class="anchor-link" href="#1.3-Your-First-Program:-Hello-OpenDNS!">&#182;</a></h2><p>Traditionally speaking, the first program tutorials will have you write is one that prints <code>"Hello, World!"</code> to the screen. Let's try a slightly modified version. In order to print to the screen, we'll use the <code>print()</code> function. The syntax for this command looks like this:</p>
-
-<pre><code>print('Some String of Text')
+17
 
 </code></pre>
 
-<p>Let's give it a try!</p>
+<hr>
+
+<h2 id="2.2-Variable-Names">2.2 Variable Names<a class="anchor-link" href="#2.2-Variable-Names">&#182;</a></h2><p>Learning what to call your variables is actually a very important skill that, for the most part, is picked up through experience. However, there are some rules that must be followed just to first make sure your variable name is valid.</p>
+
+<p><strong>What's Legal:</strong></p>
+
+<ul>
+
+<li>Variable can be any length. </li>
+
+<li>They can't <em>begin</em> with a number, but can have both numbers and letters within them. </li>
+
+<li>You can also use both lower case and upper case letters in your variable names. </li>
+
+<li>You'll often see the underscore <code>_</code> used, since variable names can't have spaces.</li>
+
+</ul>
+
+<p>Invalid variable names return a <code>SyntaxError</code>.</p>
+
+<p><strong>Beginning with a number:</strong></p>
 
 </div>
 
@@ -23574,13 +23538,15 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 <div class="input">
 
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 
 <div class="inner_cell">
 
     <div class="input_area">
 
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello, OpenDNS!&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">python3</span>
+
+1variableName = 3
 
 </pre></div>
 
@@ -23596,9 +23562,15 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 <div class="output_area"><div class="prompt"></div>
 
-<div class="output_subarea output_stream output_stdout output_text">
+<div class="output_subarea output_stream output_stderr output_text">
 
-<pre>Hello, OpenDNS!
+<pre>  File &#34;&lt;stdin&gt;&#34;, line 1
+
+    1variableName = 3
+
+                ^
+
+SyntaxError: invalid syntax
 
 </pre>
 
@@ -23622,15 +23594,57 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 <div class="text_cell_render border-box-sizing rendered_html">
 
-<div class="alert alert-success">Great, it works! Congratulations, you've just run your first program in Python!</div><p>For <code>Python2</code> users, the print statement is slightly different. <code>print</code> isn't actually a function in <code>Python2</code>, and as such doesn't require parentheses. Those calls look like this:</p>
+<p><strong>Invalid symbols:</strong></p>
 
-<pre><code>&gt;&gt;&gt; print 'Hello, OpenDNS!'
+</div>
 
-Hello, OpenDNS!
+</div>
 
-</code></pre>
+</div>
 
-<hr>
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="input">
+
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
+
+<div class="inner_cell">
+
+    <div class="input_area">
+
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">python3</span>
+
+hello@ = 5
+
+</pre></div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="output_wrapper">
+
+<div class="output">
+
+<div class="output_area"><div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stderr output_text">
+
+<pre>  File &#34;&lt;stdin&gt;&#34;, line 1
+
+    hello@ = 5
+
+           ^
+
+SyntaxError: invalid syntax
+
+</pre>
+
+</div>
+
+</div>
 
 </div>
 
@@ -23648,55 +23662,57 @@ Hello, OpenDNS!
 
 <div class="text_cell_render border-box-sizing rendered_html">
 
-<h2 id="1.4-Arithmetic-Operations">1.4 Arithmetic Operations<a class="anchor-link" href="#1.4-Arithmetic-Operations">&#182;</a></h2><p>You've already gotten a taste of how to add back in <em>1.2</em>. We'll be building on that by going over some of the mathematical <strong>operators</strong> built into <code>Python</code>. Operators are unique symbols that represent some computation.</p>
+<p>Another condition for an invalid variable name is using a <em>keyword</em>. Keywords are words that have special predefined meanings and uses within <code>Python</code>. As a matter of fact, all high level languages have <em>keywords</em> of some form. If you attempt to assign a keyword a value as if it were a variable, you'll also get a <code>SyntaxError</code>.</p>
 
-<p><strong>Addition</strong></p>
+</div>
 
-<pre><code>&gt;&gt;&gt; 10 + 15
+</div>
 
-25
+</div>
 
-</code></pre>
+<div class="cell border-box-sizing code_cell rendered">
 
-<p><strong>Subtraction</strong></p>
+<div class="input">
 
-<pre><code>&gt;&gt;&gt; 7 - 3
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 
-4
+<div class="inner_cell">
 
-</code></pre>
+    <div class="input_area">
 
-<p><strong>Multiplication</strong></p>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">python3</span>
 
-<pre><code>&gt;&gt;&gt; 4 * 5
+class = &#39;Physics 101&#39;
 
-20
+</pre></div>
 
-</code></pre>
+</div>
 
-<p>Division gets a little different. There are two operators for doing division, and each returns a slightly different value: <code>/</code> and <code>//</code>.</p>
+</div>
 
-<p>Generally speaking, one is safe to assume that the general division operator is the <code>/</code>. Let's use it first just to see what we get from it.</p>
+</div>
 
-<pre><code>&gt;&gt;&gt; 23/3
+<div class="output_wrapper">
 
-7.666666666666667
+<div class="output">
 
-</code></pre>
+<div class="output_area"><div class="prompt"></div>
 
-<p>Note that it has a decimal. It's important to note that this means it's <strong>not</strong> an integer, but instead what's known as a <strong>float</strong>, the <code>type</code> of decimal numbers.</p>
+<div class="output_subarea output_stream output_stderr output_text">
 
-<p>Let's use the second operator now.</p>
+<pre>  File &#34;&lt;stdin&gt;&#34;, line 1
 
-<pre><code>&gt;&gt;&gt; 23//3
+    class = &#39;Physics 101&#39;
 
-7
+          ^
 
-</code></pre>
+SyntaxError: invalid syntax
 
-<p>As we can see, the decimal disappeared. Using the <code>//</code> operator forces the output to be an integer. However, note that it does not round the value down to 7, it simply <strong>truncates</strong> the decimal values, which is to say it chops them off. There are ways to round using the <code>round()</code> function.</p>
+</pre>
 
-<hr>
+</div>
+
+</div>
 
 </div>
 
@@ -23714,45 +23730,111 @@ Hello, OpenDNS!
 
 <div class="text_cell_render border-box-sizing rendered_html">
 
-<h2 id="1.5-Values-and-Types">1.5 Values and Types<a class="anchor-link" href="#1.5-Values-and-Types">&#182;</a></h2><p>We have already seen several values and types of data through this tutorial! Let's talk about these values quickly, and understand what it means to be a <code>type</code> of something.</p>
+<p>Here's a list of all the keywords in <code>Python 3</code>:</p>
 
-<p>Values belong to types. Types allow <code>Python</code> to know what to do with data it is given, and determine what kind of behavior the data should have. Some values we've seen are:</p>
+<pre><code>False  class    finally is       return
 
-<pre><code>20, 7.66666..., 'Hello, OpenDNS!
+None   continue for     lambda   try
 
-</code></pre>
+True   def      from    nonlocal while
 
-<p><code>20</code> is an integer (<code>int</code>), <code>7.6666...</code> is a float, and <code>'Hello, OpenDNS!'</code> is a string (<code>str</code>). If you're ever unsure about the type of a language, <code>Python</code> has a built in <code>type()</code> function that returns the type of an object. Let's try verifying these value types through the interpreter!</p>
+and    del      global  not      with
 
-<pre><code>&gt;&gt;&gt; type(20)
+as     elif     if      or       yield
 
-&lt;class 'int'&gt;
+assert else     import  pass
 
-&gt;&gt;&gt; type(7.66666)
-
-&lt;class 'float'&gt;
-
-&gt;&gt;&gt; type('Hello, OpenDNS!')
-
-&lt;class 'str'&gt;
+break  except   in      raise
 
 </code></pre>
 
-<p>The word <code>class</code> found in these outputs represents a category. You can think of a <code>type</code> as a category of values.</p>
+<p>Don't worry, you won't need to memorize these. Most text editors or development environments are highlighted, underlined, or displayed in a different color.</p>
 
-<p>Notice that <code>'Hello, OpenDNS!'</code> has quotes around them. Why do we need these? What happens if we put quotes around <code>20</code> and <code>7.66666</code>? What type would they be?</p>
+<hr>
 
-<pre><code>&gt;&gt;&gt; type('20')
+<h2 id="2.3-Expressions-and-Statements">2.3 Expressions and Statements<a class="anchor-link" href="#2.3-Expressions-and-Statements">&#182;</a></h2><p>An <strong>expression</strong> is a combination of values, variables, and operators. Some legal expressions are:</p>
 
-&lt;class 'str'&gt;
+</div>
 
-&gt;&gt;&gt; type('7.66666')
+</div>
 
-&lt;class 'str'&gt;
+</div>
 
-</code></pre>
+<div class="cell border-box-sizing code_cell rendered">
 
-<p>They're strings! This means we've converted these values to strings. Another way to convert values to strings is using the builtin <code>str()</code> function. You can convert these values back to <code>integers</code> and <code>floats</code> using <code>ints()</code> and <code>float()</code> as well.</p>
+<div class="input">
+
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
+
+<div class="inner_cell">
+
+    <div class="input_area">
+
+<div class=" highlight hl-ipython3"><pre><span></span><span class="mi">42</span>
+
+</pre></div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="output_wrapper">
+
+<div class="output">
+
+<div class="output_area"><div class="prompt output_prompt">Out[13]:</div>
+
+<div class="output_text output_subarea output_execute_result">
+
+<pre>42</pre>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="input">
+
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
+
+<div class="inner_cell">
+
+    <div class="input_area">
+
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">17</span>
+
+<span class="n">n</span> <span class="o">+</span> <span class="mi">25</span>
+
+</pre></div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="output_wrapper">
+
+<div class="output">
+
+<div class="output_area"><div class="prompt output_prompt">Out[19]:</div>
+
+<div class="output_text output_subarea output_execute_result">
+
+<pre>42</pre>
+
+</div>
+
+</div>
 
 </div>
 
@@ -23770,43 +23852,333 @@ Hello, OpenDNS!
 
 <div class="text_cell_render border-box-sizing rendered_html">
 
-<h2 id="1.6-Exercises">1.6 Exercises<a class="anchor-link" href="#1.6-Exercises">&#182;</a></h2><p>It's important in programming to understand the behavior of your tools both when they work, and when they don't. Knowing when and why something may break is just as important as knowing when and why something will work smoothly. These are some simple exercises to demonstrate what I mean.</p>
+<p>A <strong>statement</strong> is a bit of code that has some effect, such as initializing a variable, or printing some value.</p>
 
-<ol>
+</div>
 
-<li>In a print statement, what happens if you leave out one of the parentheses, or both?</li>
+</div>
 
-<li>If you are trying to print a string, what happens if you leave out one of the quotation marks,
+</div>
 
-or both?</li>
+<div class="cell border-box-sizing code_cell rendered">
 
-<li>You can use a minus sign to make a negative number like -2. What happens if you put a plus sign before a number? What about 2++2?</li>
+<div class="input">
 
-<li>In math notation, leading zeros are ok, as in 02. What happens if you try this in Python?</li>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 
-<li>What happens if you have two values with no operator between them?</li>
+<div class="inner_cell">
 
-</ol>
+    <div class="input_area">
 
-<p><strong>Exercise 1.2:</strong> Start the Python interpreter and use it as a calculator.</p>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">17</span>
 
-<ol>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 
-<li>How many seconds are there in 42 minutes 42 seconds?</li>
+</pre></div>
 
-<li>How many miles are there in 10 kilometers? Hint: there are 1.61 kilometers in a mile.</li>
+</div>
 
-<li>If you run a 10 kilometer race in 42 minutes 42 seconds, what is your average pace (time per
+</div>
 
-mile in minutes and seconds)? What is your average speed in miles per hour?</li>
+</div>
 
-</ol>
+<div class="output_wrapper">
 
-<p><sup>These exercises are from page 7 of Think Python 2e, by Allen Downey).</sup></p>
+<div class="output">
+
+<div class="output_area"><div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+
+<pre>17
+
+</pre>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="cell border-box-sizing text_cell rendered">
+
+<div class="prompt input_prompt">
+
+</div>
+
+<div class="inner_cell">
+
+<div class="text_cell_render border-box-sizing rendered_html">
+
+<p>Here, we first assign the value 17 to the variable <code>x</code>, then call the print() function on it to print the value of <code>x</code>.</p>
 
 <hr>
 
-<p><a class="btn btn-success" href="../../index.html" role="button">Return to Main</a>  <a class="btn btn-success" href="../ch2/ch2_pg1.html" role="button">Chapter 2</a></p>
+<h2 id="2.4-Script-Mode">2.4 Script Mode<a class="anchor-link" href="#2.4-Script-Mode">&#182;</a></h2><p>Thus far, the commands we've run were all done in <strong>interactive mode</strong> through the <code>interpreter</code>. While this is useful for quickly executing small snippets of code, it can be very cumbersome when attempting to execute anything more than a few lines.</p>
+
+<p>Instead, what is most commonly done is to have the code saved to a file known as a <strong>script</strong>, which typically takes the form of a file ending in <strong>.py</strong>.</p>
+
+<p>Expressions in the interpreter have the effect of outputting the value of the expression. For example, if you were using the <code>Python 3</code> interpreter as a calculator to calculate <code>25 * 49</code>, you'd see something like this:</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="input">
+
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
+
+<div class="inner_cell">
+
+    <div class="input_area">
+
+<div class=" highlight hl-ipython3"><pre><span></span><span class="mi">25</span><span class="o">*</span><span class="mi">49</span>
+
+</pre></div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="output_wrapper">
+
+<div class="output">
+
+<div class="output_area"><div class="prompt output_prompt">Out[22]:</div>
+
+<div class="output_text output_subarea output_execute_result">
+
+<pre>1225</pre>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="cell border-box-sizing text_cell rendered">
+
+<div class="prompt input_prompt">
+
+</div>
+
+<div class="inner_cell">
+
+<div class="text_cell_render border-box-sizing rendered_html">
+
+<p>However, if you have a file with an expression in it, there won't be a valued displayed. For example, we have a file called <code>expressionDemo.py</code>, which stores the above single line of code (<code>25 * 49</code>). We can execute scripts with</p>
+
+<pre><code>python3 [script.py]
+
+</code></pre>
+
+<p>So let's give it a try. First let's verify the code inside the file with <code>cat</code>.</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="input">
+
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
+
+<div class="inner_cell">
+
+    <div class="input_area">
+
+<div class=" highlight hl-ipython3"><pre><span></span>%%bash
+
+cat expressionDemo.py
+
+</pre></div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="output_wrapper">
+
+<div class="output">
+
+<div class="output_area"><div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+
+<pre>25*49
+
+</pre>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="cell border-box-sizing text_cell rendered">
+
+<div class="prompt input_prompt">
+
+</div>
+
+<div class="inner_cell">
+
+<div class="text_cell_render border-box-sizing rendered_html">
+
+<p>Great, now let's actually run it.</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="input">
+
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
+
+<div class="inner_cell">
+
+    <div class="input_area">
+
+<div class=" highlight hl-ipython3"><pre><span></span>%%bash
+
+python3 expressionDemo.py
+
+</pre></div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="cell border-box-sizing text_cell rendered">
+
+<div class="prompt input_prompt">
+
+</div>
+
+<div class="inner_cell">
+
+<div class="text_cell_render border-box-sizing rendered_html">
+
+<div class="alert alert-info">Recall we need to execute the script from the <code>bash</code> using the <code>python3</code> command.</div><p>Note how there is no output. If we want output from expressions, we need to explicitely add <code>print()</code> statements to our code.</p>
+
+<p>If we modify the code in <code>expressionDemo.py</code> to <code>print(25 * 49)</code>, then we will see the output of <code>1225</code>.</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="cell border-box-sizing text_cell rendered">
+
+<div class="prompt input_prompt">
+
+</div>
+
+<div class="inner_cell">
+
+<div class="text_cell_render border-box-sizing rendered_html">
+
+<h3 id="Exercise:-Write-Your-First-Script!">Exercise: Write Your First Script!<a class="anchor-link" href="#Exercise:-Write-Your-First-Script!">&#182;</a></h3><p>Write a script that, when executed using <code>python3 exercise2_1.py</code>, has the following output.</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="input">
+
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
+
+<div class="inner_cell">
+
+    <div class="input_area">
+
+<div class=" highlight hl-ipython3"><pre><span></span>%%bash
+
+python3 exercise2_1.py
+
+</pre></div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="output_wrapper">
+
+<div class="output">
+
+<div class="output_area"><div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+
+<pre>Hello, OpenDNS!
+
+The value of 32*43 is: 1536
+
+</pre>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="cell border-box-sizing text_cell rendered">
+
+<div class="prompt input_prompt">
+
+</div>
+
+<div class="inner_cell">
+
+<div class="text_cell_render border-box-sizing rendered_html">
+
+<p>Good work!</p>
+
+<hr>
+
+<p><a class="btn btn-success" href="../../index.html" role="button">Return to Main</a> <a class="btn btn-success" href="../ch2/ch2_pg2.html" role="button">Continue to Page 2</a></p>
 
 </div>
 
